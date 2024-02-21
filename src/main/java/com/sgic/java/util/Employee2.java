@@ -4,23 +4,30 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
 
-public class get1{
+public class Employee2{
     // Getters and setters
     private int id;
     private String name;
     private String position;
     private String department;
+    public Employee2() {
+    }
 
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
     public String getPosition() {
         return position;
     }
@@ -41,7 +48,7 @@ public class get1{
             if (connection != null) {
                 //System.out.println("Connected");
 
-                String insertQuery = "INSERT INTO emp (id, name, position, department) VALUES (?, ?, ?, ?)";
+                String insertQuery = "INSERT INTO emp (id,name,position,department) VALUES (?, ?, ?, ?)";
 
                 PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
 
